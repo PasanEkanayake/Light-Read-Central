@@ -183,3 +183,15 @@ require_once ASTRA_THEME_DIR . 'inc/core/markup/class-astra-markup.php';
 require_once ASTRA_THEME_DIR . 'inc/core/deprecated/deprecated-filters.php';
 require_once ASTRA_THEME_DIR . 'inc/core/deprecated/deprecated-hooks.php';
 require_once ASTRA_THEME_DIR . 'inc/core/deprecated/deprecated-functions.php';
+
+function display_parent_page_title() {
+    // Check if we're on a page and the page has a parent
+    if (is_page() && $post->post_parent) {
+        // Get the parent page object
+        $parent = get_post($post->post_parent);
+        // Return the parent page title
+        return '<h2>' . esc_html($parent->post_title) . '</h2>';
+    }
+    return ''; // Return nothing if there is no parent page
+}
+add_shortcode('parent_page_title', 'display_parent_page_title');
