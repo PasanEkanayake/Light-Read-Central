@@ -13,3 +13,6 @@
   /* Hide items beyond the 10th one */
   display: none;
 }/* End custom CSS */
+/* Start custom CSS for theme-post-content, class: .elementor-element-599f4f8 */.elementor-element-599f4f8 {
+    word-break: break-word;
+}/* End custom CSS */
