@@ -52,3 +52,39 @@ $chapters = [
 ];
 
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapters</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <header>
+        <h1>Chapter Overview</h1>
+    </header>
+    
+    <nav>
+        <ul>
+            <?php foreach ($chapters as $index => $chapter): ?>
+                <li><a href="#chapter-<?php echo $index; ?>"><?php echo htmlspecialchars($chapter['title']); ?></a></li>
+            <?php endforeach; ?>
+        </ul>
+    </nav>
+
+    <main>
+        <?php foreach ($chapters as $index => $chapter): ?>
+            <section id="chapter-<?php echo $index; ?>">
+                <h2><?php echo htmlspecialchars($chapter['title']); ?></h2>
+                <?php echo $chapter['content']; ?>
+            </section>
+        <?php endforeach; ?>
+    </main>
+
+    <footer>
+        <p>&copy; <?php echo date('Y'); ?> Your Company</p>
+    </footer>
+</body>
+</html>
