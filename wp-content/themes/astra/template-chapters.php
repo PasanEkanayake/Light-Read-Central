@@ -22,10 +22,5 @@ get_header(); ?>
 		?>
 	</div>
 <?php
-if ( astra_page_layout() == 'right-sidebar' ) :
-
-	get_sidebar();
-
-endif;
 
 get_footer();
